@@ -1,0 +1,126 @@
+/* Colors and theme variables */
+:root{
+  --bg:#0f172a;
+  --panel:#111827;
+  --border:#1f2937;
+  --text:#e5e7eb;
+  --muted:#a1a1aa;
+  --accent:#22c55e;
+  --danger:#ef4444;
+  --warn:#f59e0b;
+}
+
+/* Reset some basics */
+*{ box-sizing:border-box; }
+
+/* Body and main text */
+body{
+  margin:0;
+  font-family:system-ui, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* General container width */
+.container{
+  width:min(900px, 92%);
+  margin:0 auto;
+}
+
+/* Header section */
+header{
+  padding:24px 0 8px;
+}
+h1{ margin:0 0 4px; font-size:28px; }
+.tagline{ color:var(--muted); margin:0; }
+
+/* Card style for each section */
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  margin:16px 0;
+}
+
+h2{ margin-top:0; font-size:20px; }
+
+/* Layout for form rows */
+.row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:10px;
+  flex-wrap:wrap;
+}
+label{ min-width:160px; color:var(--muted); }
+input, select, button{
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:#0b1220;
+  color:var(--text);
+}
+input, select{ flex:1; }
+
+/* Buttons */
+button{
+  background:var(--accent);
+  border:none;
+  color:#052e12;
+  font-weight:600;
+  cursor:pointer;
+}
+button:hover{ filter:brightness(1.05); }
+button.danger{ background:var(--danger); color:#2a0707; }
+
+.hint{ color:var(--muted); }
+
+/* Grid for budget summary */
+.summary-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  margin-bottom:10px;
+}
+.label{ color:var(--muted); font-size:12px; }
+.value{ font-size:22px; font-weight:700; }
+
+/* Progress bar */
+.progress{
+  height:12px;
+  background:#0b1220;
+  border:1px solid var(--border);
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:8px;
+}
+.progress-bar{
+  height:100%;
+  width:0%;
+  background:var(--accent);
+  transition:width .2s ease;
+}
+
+/* Alert text styles */
+.alert{
+  margin:8px 0 0;
+  min-height:20px;
+  color:var(--muted);
+}
+.alert.warn{ color:var(--warn); }
+.alert.danger{ color:var(--danger); }
+
+/* Table of expenses */
+table{ width:100%; border-collapse:collapse; }
+th, td{
+  padding:10px 8px;
+  border-bottom:1px solid var(--border);
+}
+th{ text-align:left; color:var(--muted); font-weight:600; }
+td.right{ text-align:right; }
+
+/* Footer */
+.actions{ margin-top:10px; display:flex; justify-content:flex-end; }
+footer{ padding:24px 0 48px; }
+.center{ text-align:center; }

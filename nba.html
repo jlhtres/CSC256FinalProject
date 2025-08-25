@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Never Broke Again — Beginner Budget App</title>
+  <link rel="stylesheet" href="nba.css"/>
+</head>
+<body>
+  <!-- Header: shows the app name and tagline -->
+  <header class="container">
+    <h1>Never Broke Again</h1>
+    <p class="tagline">The easiest way to track day-to-day spending</p>
+  </header>
+
+  <main class="container">
+    <!-- Section 1: Budget Setup -->
+    <section class="card" id="budget-setup">
+      <h2>1) Set Your Monthly Budget</h2>
+      <div class="row">
+        <label for="budgetInput">Monthly Budget ($)</label>
+        <input type="number" id="budgetInput" min="0" step="0.01" placeholder="e.g., 500"/>
+        <button id="saveBudgetBtn">Save Budget</button>
+      </div>
+      <small class="hint">Tip: You can change this anytime.</small>
+    </section>
+
+    <!-- Section 2: Budget Summary -->
+    <section class="card" id="summary">
+      <h2>2) Budget Summary</h2>
+      <div class="summary-grid">
+        <div>
+          <div class="label">Budget</div>
+          <div class="value" id="summaryBudget">$0.00</div>
+        </div>
+        <div>
+          <div class="label">Spent</div>
+          <div class="value" id="summarySpent">$0.00</div>
+        </div>
+        <div>
+          <div class="label">Remaining</div>
+          <div class="value" id="summaryRemaining">$0.00</div>
+        </div>
+      </div>
+
+      <!-- Progress bar shows how much of the budget is used -->
+      <div class="progress">
+        <div class="progress-bar" id="progressBar" style="width:0%"></div>
+      </div>
+      <!-- This will display alert text when you hit spending milestones -->
+      <p id="alertText" class="alert"></p>
+    </section>
+
+    <!-- Section 3: Add an Expense -->
+    <section class="card" id="add-expense">
+      <h2>3) Add an Expense</h2>
+      <form id="expenseForm">
+        <div class="row">
+          <label for="expenseName">Name</label>
+          <input type="text" id="expenseName" placeholder="Groceries" required/>
+        </div>
+
+        <div class="row">
+          <label for="expenseAmount">Amount ($)</label>
+          <input type="number" id="expenseAmount" min="0" step="0.01" placeholder="45.00" required/>
+        </div>
+
+        <div class="row">
+          <label for="expenseCategory">Category</label>
+          <select id="expenseCategory">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Bills</option>
+            <option>Shopping</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="expenseDate">Date</label>
+          <input type="date" id="expenseDate"/>
+        </div>
+
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+
+    <!-- Section 4: Expense List -->
+    <section class="card" id="expense-list">
+      <h2>4) Your Expenses</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th class="right">Amount</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="expensesTbody">
+          <!-- Rows will be added here with JavaScript -->
+        </tbody>
+      </table>
+      <div class="actions">
+        <button id="clearAllBtn" class="danger">Clear All</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container center">
+    <small>Data saved in your browser (localStorage).</small>
+  </footer>
+
+  <script src="nba.js"></script>
+</body>
+</html>
