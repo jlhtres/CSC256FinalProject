@@ -44,6 +44,5 @@ The goal is to help users quickly set a budget, add expenses, and track spending
 ---
 
 ## How to Run
-1. Clone or download the repository  
-   ```bash
-   git clone https://github.com/<your-username>/never-broke-again.git
+1. Download the repository  
+   
